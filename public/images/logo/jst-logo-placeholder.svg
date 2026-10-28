@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 150" role="img" aria-labelledby="title">
+  <title id="title">JST Logo Placeholder — replace with official client logo</title>
+  <rect width="360" height="150" rx="18" fill="none"/>
+  <g transform="translate(10 8)"><path d="M62 8C31 8 8 32 8 62c0 39 46 78 54 84 8-6 54-45 54-84C116 32 93 8 62 8Z" fill="#0756bd"/><circle cx="62" cy="60" r="21" fill="#20262d"/><path d="M66 82 85 119 62 145Z" fill="#85aef1"/></g>
+  <text x="142" y="66" fill="#0b63d1" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700">Jelajah Semesta</text>
+  <text x="142" y="104" fill="#0b63d1" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700">Teknologi</text>
+</svg>

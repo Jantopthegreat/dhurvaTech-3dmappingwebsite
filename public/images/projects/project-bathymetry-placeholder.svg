@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Waterbody Mapping</title><desc id="desc">Portfolio project image</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071a33"/><stop offset=".55" stop-color="#123b6b"/><stop offset="1" stop-color="#1b5d8f"/></linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38b8d7" stop-opacity=".8"/><stop offset="1" stop-color="#38b8d7" stop-opacity="0"/></linearGradient>
+    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse"><path d="M54 0H0V54" fill="none" stroke="#d9e8ff" stroke-opacity=".12" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/><rect width="1600" height="1000" fill="url(#grid)"/>
+  <circle cx="1180" cy="300" r="430" fill="url(#glow)"/>
+  <g fill="none" stroke="#d3e6ff" stroke-opacity=".24" stroke-width="3">
+    <path d="M-80 740C140 580 230 910 480 720S770 500 980 660 1300 880 1680 550"/>
+    <path d="M-80 785C140 625 230 955 480 765S770 545 980 705 1300 925 1680 595"/>
+    <path d="M-80 830C140 670 230 1000 480 810S770 590 980 750 1300 970 1680 640"/>
+    <path d="M-80 560C180 380 310 670 520 490S820 330 1040 450 1390 610 1680 380"/>
+    <path d="M-80 605C180 425 310 715 520 535S820 375 1040 495 1390 655 1680 425"/>
+  </g>
+  <g transform="translate(1130 270)" opacity=".88" stroke="#f4f8ff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M-180 0L-65 48 0 0 65 48 180 0M-65 48L-80 130 0 170 80 130 65 48M0 0V170"/>
+    <circle cx="-180" cy="0" r="27" fill="#f4f8ff"/><circle cx="180" cy="0" r="27" fill="#f4f8ff"/><circle cx="-80" cy="130" r="22" fill="#f4f8ff"/><circle cx="80" cy="130" r="22" fill="#f4f8ff"/>
+    <rect x="-43" y="-25" width="86" height="76" rx="15" fill="#f4f8ff" stroke="none"/><circle cx="0" cy="13" r="13" fill="#0d315a" stroke="none"/>
+  </g>
+  <rect x="72" y="72" width="11" height="120" rx="6" fill="#38b8d7"/>
+  <text x="112" y="118" fill="#b9d6ff" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="27" letter-spacing="7">JST IMAGE PLACEHOLDER</text>
+  <text x="112" y="180" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="53">Waterbody Mapping</text>
+  <text x="112" y="231" fill="#d8e6f6" font-family="Arial,Helvetica,sans-serif" font-size="27">Portfolio project image</text>
+  <text x="112" y="930" fill="#bdd0e6" fill-opacity=".75" font-family="Arial,Helvetica,sans-serif" font-size="20" letter-spacing="3">LOCAL ASSET · REPLACE WHEN CLIENT IMAGES ARE READY</text>
+</svg>
