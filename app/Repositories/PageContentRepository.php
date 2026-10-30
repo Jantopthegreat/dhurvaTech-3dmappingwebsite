@@ -30,7 +30,7 @@ class PageContentRepository
             'eyebrow' => 'WHO WE ARE',
             'title' => 'Mapping reality. Enabling better decisions.',
             'description' => 'Dhurva Tech Angkasa Raya provides surveying, mapping, and spatial-data solutions to help organizations understand places, assets, and projects with greater clarity.',
-            'image' => 'images/about/about-placeholder.svg',
+            'image' => 'images/about/foto-drone.jpg',
             'stats' => [
                 ['value' => '08', 'label' => 'Service categories'],
                 ['value' => '3D', 'label' => 'Mapping perspective'],

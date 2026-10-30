@@ -1,0 +1,635 @@
+/* ==========================================================
+   Admin Blog — daftar & editor artikel
+   Semua aturan di-scope ke .blog-admin supaya tidak bentrok
+   dengan CSS admin yang sudah ada. Ubah warna lewat variabel.
+   ========================================================== */
+
+.blog-admin {
+    --ba-ink: #1b2330;
+    --ba-muted: #667085;
+    --ba-line: #e3e6ea;
+    --ba-line-strong: #cdd2d9;
+    --ba-surface: #ffffff;
+    --ba-subtle: #f5f6f8;
+    --ba-accent: #2b5c8a;
+    --ba-accent-ink: #ffffff;
+    --ba-accent-soft: #e8f0f8;
+    --ba-danger: #b42318;
+    --ba-danger-soft: #fdecea;
+    --ba-success: #146c43;
+    --ba-success-soft: #e6f4ec;
+    --ba-radius: 10px;
+    --ba-radius-sm: 6px;
+
+    color: var(--ba-ink);
+    max-width: 1120px;
+    margin-inline: auto;
+}
+
+.blog-admin *,
+.blog-admin *::before,
+.blog-admin *::after {
+    box-sizing: border-box;
+}
+
+/* ---------- Header halaman ---------- */
+
+.blog-admin .admin-page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+}
+
+.blog-admin .admin-page-header h1 {
+    margin: 0 0 0.35rem;
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.blog-admin .admin-intro {
+    margin: 0;
+    color: var(--ba-muted);
+    max-width: 52ch;
+    line-height: 1.55;
+}
+
+.blog-admin .admin-kicker {
+    margin: 0 0 0.4rem;
+    font-size: 0.8125rem;
+    color: var(--ba-muted);
+}
+
+/* ---------- Tombol & link ---------- */
+
+.blog-admin .admin-button,
+.blog-admin .admin-button-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 40px;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid var(--ba-accent);
+    border-radius: var(--ba-radius-sm);
+    background: var(--ba-accent);
+    color: var(--ba-accent-ink);
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.blog-admin .admin-button:hover,
+.blog-admin .admin-button-link:hover {
+    background: #234c73;
+    border-color: #234c73;
+}
+
+.blog-admin .admin-button-ghost {
+    background: transparent;
+    color: var(--ba-ink);
+    border-color: var(--ba-line-strong);
+}
+
+.blog-admin .admin-button-ghost:hover {
+    background: var(--ba-subtle);
+    border-color: var(--ba-line-strong);
+}
+
+.blog-admin .admin-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--ba-muted);
+    font-size: 0.9375rem;
+    text-decoration: none;
+    padding: 0.4rem 0;
+}
+
+.blog-admin .admin-back-link:hover {
+    color: var(--ba-ink);
+}
+
+.blog-admin a:focus-visible,
+.blog-admin button:focus-visible,
+.blog-admin input:focus-visible,
+.blog-admin textarea:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--ba-accent) 45%, transparent);
+    outline-offset: 2px;
+}
+
+/* ---------- Notifikasi ---------- */
+
+.blog-admin .admin-success,
+.blog-admin .admin-alert {
+    margin-bottom: 1.25rem;
+    padding: 0.8rem 1rem;
+    border-radius: var(--ba-radius-sm);
+    border: 1px solid;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
+.blog-admin .admin-success {
+    background: var(--ba-success-soft);
+    border-color: #b7dfc7;
+    color: var(--ba-success);
+}
+
+.blog-admin .admin-alert {
+    background: var(--ba-danger-soft);
+    border-color: #f3c1bb;
+    color: var(--ba-danger);
+}
+
+.blog-admin .admin-alert strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.blog-admin .admin-alert ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+/* ---------- Toolbar ringkas di atas tabel ---------- */
+
+.blog-admin .admin-list-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    color: var(--ba-muted);
+    font-size: 0.875rem;
+}
+
+/* ---------- Tabel artikel ---------- */
+
+.blog-admin .admin-table-wrap {
+    background: var(--ba-surface);
+    border: 1px solid var(--ba-line);
+    border-radius: var(--ba-radius);
+    overflow: hidden;
+}
+
+.blog-admin .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.blog-admin .admin-table th {
+    padding: 0.75rem 1rem;
+    background: var(--ba-subtle);
+    border-bottom: 1px solid var(--ba-line);
+    color: var(--ba-muted);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.blog-admin .admin-table td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--ba-line);
+    vertical-align: middle;
+    font-size: 0.9375rem;
+}
+
+.blog-admin .admin-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.blog-admin .admin-table tbody tr:hover {
+    background: color-mix(in srgb, var(--ba-subtle) 60%, transparent);
+}
+
+.blog-admin .admin-article-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    min-width: 0;
+}
+
+.blog-admin .admin-article-thumb {
+    flex: none;
+    width: 64px;
+    height: 44px;
+    border-radius: var(--ba-radius-sm);
+    border: 1px solid var(--ba-line);
+    background: var(--ba-subtle);
+    object-fit: cover;
+    display: block;
+}
+
+.blog-admin .admin-article-thumb-empty {
+    display: grid;
+    place-items: center;
+    color: var(--ba-line-strong);
+}
+
+.blog-admin .admin-article-thumb-empty svg {
+    width: 20px;
+    height: 20px;
+}
+
+.blog-admin .admin-article-title {
+    display: block;
+    color: var(--ba-ink);
+    font-weight: 600;
+    line-height: 1.35;
+    text-decoration: none;
+}
+
+.blog-admin .admin-article-title:hover {
+    color: var(--ba-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.blog-admin .admin-table-slug {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--ba-muted);
+    font-size: 0.8125rem;
+    overflow-wrap: anywhere;
+}
+
+.blog-admin .admin-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: var(--ba-accent-soft);
+    color: var(--ba-accent);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.blog-admin .admin-date {
+    white-space: nowrap;
+}
+
+.blog-admin .admin-date small {
+    display: block;
+    margin-top: 0.1rem;
+    color: var(--ba-muted);
+    font-size: 0.8125rem;
+}
+
+.blog-admin .admin-table-actions {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.blog-admin td.admin-table-actions {
+    display: table-cell;
+}
+
+.blog-admin .admin-row-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.blog-admin .admin-inline-form {
+    margin: 0;
+    display: inline;
+}
+
+.blog-admin .admin-action-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--ba-line-strong);
+    border-radius: var(--ba-radius-sm);
+    background: var(--ba-surface);
+    color: var(--ba-ink);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.blog-admin .admin-action-link:hover {
+    background: var(--ba-subtle);
+}
+
+.blog-admin .admin-action-danger {
+    color: var(--ba-danger);
+    border-color: #efc5c0;
+}
+
+.blog-admin .admin-action-danger:hover {
+    background: var(--ba-danger-soft);
+    border-color: var(--ba-danger);
+}
+
+/* ---------- Kondisi kosong ---------- */
+
+.blog-admin .admin-empty {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--ba-muted);
+}
+
+.blog-admin .admin-empty strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--ba-ink);
+    font-size: 1.0625rem;
+}
+
+.blog-admin .admin-empty .admin-button-link {
+    margin-top: 1rem;
+}
+
+/* ---------- Pagination ---------- */
+
+.blog-admin .admin-pagination {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: center;
+}
+
+.blog-admin .admin-pagination nav > div:first-child {
+    display: none; /* sembunyikan teks "Showing x to y" bawaan Laravel */
+}
+
+.blog-admin .admin-pagination svg {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+/* ---------- Editor ---------- */
+
+.blog-admin .admin-editor-panel {
+    background: transparent;
+}
+
+.blog-admin .admin-editor-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.blog-admin .admin-card {
+    background: var(--ba-surface);
+    border: 1px solid var(--ba-line);
+    border-radius: var(--ba-radius);
+    padding: 1.25rem;
+}
+
+.blog-admin .admin-card + .admin-card {
+    margin-top: 1rem;
+}
+
+.blog-admin .admin-card-title {
+    margin: 0 0 1rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+}
+
+.blog-admin .admin-editor-main {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.blog-admin .admin-editor-side {
+    position: sticky;
+    top: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.blog-admin .admin-editor-side .admin-card + .admin-card {
+    margin-top: 0;
+}
+
+.blog-admin .admin-editor-field {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.blog-admin .admin-editor-field + .admin-editor-field {
+    margin-top: 1rem;
+}
+
+.blog-admin .admin-editor-main .admin-editor-field + .admin-editor-field {
+    margin-top: 0;
+}
+
+.blog-admin .admin-editor-field label {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.blog-admin .admin-editor-field label span {
+    color: var(--ba-muted);
+    font-weight: 400;
+}
+
+.blog-admin .admin-editor-field input,
+.blog-admin .admin-editor-field textarea {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--ba-line-strong);
+    border-radius: var(--ba-radius-sm);
+    background: var(--ba-surface);
+    color: var(--ba-ink);
+    font: inherit;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    transition: border-color 0.15s;
+}
+
+.blog-admin .admin-editor-field input::placeholder,
+.blog-admin .admin-editor-field textarea::placeholder {
+    color: #98a2b3;
+}
+
+.blog-admin .admin-editor-field input:hover,
+.blog-admin .admin-editor-field textarea:hover {
+    border-color: #98a2b3;
+}
+
+.blog-admin .admin-editor-field textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.blog-admin .admin-title-input {
+    font-size: 1.25rem !important;
+    font-weight: 700;
+    padding-block: 0.8rem !important;
+}
+
+.blog-admin .admin-content-input {
+    min-height: 360px !important;
+    line-height: 1.7 !important;
+}
+
+.blog-admin .admin-field-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--ba-muted);
+    font-size: 0.8125rem;
+}
+
+.blog-admin .admin-field-error {
+    margin: 0;
+    color: var(--ba-danger);
+    font-size: 0.8125rem;
+}
+
+.blog-admin .has-error input,
+.blog-admin .has-error textarea {
+    border-color: var(--ba-danger);
+}
+
+.blog-admin .admin-slug-preview {
+    color: var(--ba-muted);
+    font-size: 0.8125rem;
+    overflow-wrap: anywhere;
+}
+
+.blog-admin .admin-image-preview {
+    display: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: 0.25rem;
+    border: 1px solid var(--ba-line);
+    border-radius: var(--ba-radius-sm);
+    background: var(--ba-subtle);
+    object-fit: cover;
+}
+
+.blog-admin .admin-image-preview.is-visible {
+    display: block;
+}
+
+.blog-admin .admin-editor-field input[type="file"] {
+    padding: 0.55rem;
+    border-style: dashed;
+    background: var(--ba-subtle);
+    cursor: pointer;
+}
+
+.blog-admin .admin-current-image-label {
+    margin: 0.25rem 0 0;
+    color: var(--ba-muted);
+    font-size: 0.8125rem;
+}
+
+/* ---------- Bar aksi bawah ---------- */
+
+.blog-admin .admin-editor-actions {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.25rem;
+    background: color-mix(in srgb, var(--ba-surface) 94%, transparent);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--ba-line);
+    border-radius: var(--ba-radius);
+}
+
+.blog-admin .admin-editor-actions-end {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* ---------- Responsif ---------- */
+
+@media (max-width: 900px) {
+    .blog-admin .admin-editor-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .blog-admin .admin-editor-side {
+        position: static;
+    }
+}
+
+@media (max-width: 720px) {
+    .blog-admin .admin-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+    }
+
+    .blog-admin .admin-table,
+    .blog-admin .admin-table tbody,
+    .blog-admin .admin-table tr,
+    .blog-admin .admin-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .blog-admin .admin-table tr {
+        padding: 0.9rem 1rem;
+        border-bottom: 1px solid var(--ba-line);
+    }
+
+    .blog-admin .admin-table tbody tr:last-child {
+        border-bottom: 0;
+    }
+
+    .blog-admin .admin-table td {
+        padding: 0.3rem 0;
+        border: 0;
+    }
+
+    .blog-admin .admin-table td[data-label]::before {
+        content: attr(data-label) ": ";
+        color: var(--ba-muted);
+        font-size: 0.8125rem;
+    }
+
+    .blog-admin .admin-table td.admin-cell-main::before {
+        content: none;
+    }
+
+    .blog-admin .admin-table-actions {
+        text-align: left;
+        padding-top: 0.6rem !important;
+    }
+
+    .blog-admin .admin-page-header .admin-button-link {
+        width: 100%;
+    }
+
+    .blog-admin .admin-editor-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .blog-admin .admin-editor-actions-end {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .blog-admin * {
+        transition: none !important;
+    }
+}
