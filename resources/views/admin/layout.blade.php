@@ -13,6 +13,8 @@
             <p class="admin-sidebar-label">Workspace</p>
             <a class="admin-nav-link {{ request()->routeIs('admin.dashboard') ? 'admin-nav-link-active' : '' }}" href="{{ route('admin.dashboard') }}">Dashboard</a>
             <a class="admin-nav-link {{ request()->routeIs('admin.blog.*') ? 'admin-nav-link-active' : '' }}" href="{{ route('admin.blog.index') }}">Blog</a>
+            <a class="admin-nav-link {{ request()->routeIs('admin.contact.*') ? 'admin-nav-link-active' : '' }}" href="{{ route('admin.contact.index') }}">Kontak</a>
+            <a class="admin-nav-link {{ request()->routeIs('admin.services.*') ? 'admin-nav-link-active' : '' }}" href="{{ route('admin.services.index') }}">Layanan</a>
             <a class="admin-nav-link" href="{{ route('home') }}">Lihat website</a>
             <form method="POST" action="{{ route('admin.logout') }}">
                 @csrf

@@ -2,6 +2,8 @@
 
 ** PLIS DIBACA **
 
+JANLUP GANTI DB_PORT ATAU CEK ULANG .ENV
+
 cara melihat branch 
 git branch
 

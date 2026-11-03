@@ -24,8 +24,8 @@
 
         <div class="footer-column footer-contact">
             <h2>Contact</h2>
-            <a href="mailto:{{ config('jst.contact.email') }}">{{ config('jst.contact.email') }}</a>
-            <p>{{ config('jst.contact.address') }}</p>
+            <a href="mailto:{{ $contact['email'] }}">{{ $contact['email'] }}</a>
+            <p>{{ $contact['address'] }}</p>
             <a href="{{ route('contact') }}" class="footer-contact-link">Contact our team <span aria-hidden="true">→</span></a>
         </div>
     </div>

@@ -13,6 +13,7 @@
             <p class="admin-sidebar-label">Workspace</p>
             <a class="admin-nav-link admin-nav-link-active" href="{{ route('admin.dashboard') }}">Dashboard</a>
             <a class="admin-nav-link" href="{{ route('admin.blog.index') }}">Blog</a>
+            <a class="admin-nav-link" href="{{ route('admin.contact.index') }}">Kontak</a>
             <a class="admin-nav-link" href="{{ route('home') }}">Lihat website</a>
             <form method="POST" action="{{ route('admin.logout') }}">
                 @csrf
