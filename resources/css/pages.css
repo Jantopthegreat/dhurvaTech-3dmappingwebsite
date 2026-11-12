@@ -1,5 +1,23 @@
 /* Home hero */
-.hero-section { position: relative; display: flex; min-height: min(850px, 100svh); align-items: center; overflow: hidden; padding: 165px 0 95px; color: #fff; background-color: #17212c; background-image: var(--hero-image); background-position: center; background-size: cover; }
+.hero-section {
+    position: relative;
+    display: flex;
+
+    min-height: calc(100svh - 70px);
+    box-sizing: border-box;
+
+    align-items: center;
+    overflow: hidden;
+
+    padding: 100px 0 90px;
+
+    color: #fff;
+    background-color: #17212c;
+    background-image: var(--hero-image);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .hero-overlay {position: absolute;
     inset: 0;
     background:

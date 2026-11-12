@@ -65,7 +65,10 @@
     .nav-dropdown[open] .dropdown-menu { display: grid; }
     .dropdown-menu .dropdown-all { border-bottom-color: rgba(255,255,255,.12); }
     .nav-store { align-self: flex-start; margin-top: 12px; }
-    .hero-section { min-height: auto; padding: 140px 0 78px; }
+        .hero-section {
+            min-height: calc(100svh - 84px);
+            padding: 100px 0 70px;
+        }
     .hero-layout { grid-template-columns: 1fr; gap: 35px; }
     .hero-copy { max-width: 760px; padding-top: 20px; }
     .hero-feature-card { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1fr); max-width: 670px; }
