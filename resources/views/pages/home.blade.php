@@ -6,6 +6,7 @@
 @section('content')
     @include('pages.home.sections.hero')
     @include('pages.home.sections.services-preview')
+    @include('pages.home.sections.documentation-preview')
     @include('pages.home.sections.about-preview')
 
     @include('pages.home.sections.projects-preview')
