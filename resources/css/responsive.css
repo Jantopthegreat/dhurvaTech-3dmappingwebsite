@@ -172,3 +172,80 @@
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* =====================================
+   HOMEPAGE SERVICES SLIDER RESPONSIVE
+===================================== */
+
+@media (max-width: 860px) {
+
+    .home-services-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .home-services-intro p {
+        font-size: 1.1rem;
+    }
+
+    .home-service-slider {
+        aspect-ratio: 1.6 / 1;
+    }
+
+    .home-service-slide-content {
+        width: 65%;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .home-services-heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .home-services-content {
+        padding: 35px 0 45px;
+    }
+
+    .home-services-intro p {
+        font-size: 1rem;
+        letter-spacing: 0.04em;
+    }
+
+    .home-service-slider {
+        min-height: 360px;
+        aspect-ratio: 4 / 5;
+    }
+
+    .home-service-slide img {
+        object-position: center;
+    }
+
+    .home-service-slide-overlay {
+        background: linear-gradient(0deg,
+                rgba(3, 13, 28, 0.72),
+                rgba(3, 13, 28, 0.08));
+    }
+
+    .home-service-slide-content {
+        top: auto;
+        bottom: 55px;
+        left: 22px;
+
+        width: calc(100% - 44px);
+
+        transform: none;
+    }
+
+    .home-service-slide-content h3 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .home-service-slider-dots {
+        right: 20px;
+        bottom: 22px;
+    }
+
+}

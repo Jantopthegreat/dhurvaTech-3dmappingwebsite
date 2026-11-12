@@ -85,4 +85,57 @@ class ServiceRepository
 
         return null;
     }
+    public function getHomepageSlides(): array
+{
+    return [
+        [
+            'slug' => 'topography',
+            'title' => 'TOPOGRAPHY SURVEY',
+            'image' => 'images/services/topography.jpg',
+            'alt' => 'Topography surveying equipment',
+        ],
+        [
+            'slug' => 'bathymetry',
+            'title' => 'BATHYMETRY',
+            'image' => 'images/services/bathymetry.jpg',
+            'alt' => 'Bathymetry surveying activity',
+        ],
+        [
+            'slug' => 'survey-drone',
+            'title' => 'SURVEY DRONE',
+            'image' => 'images/services/survey-drone.jpg',
+            'alt' => 'Drone surveying activity',
+        ],
+        [
+            'slug' => 'construction',
+            'title' => 'CONSTRUCTION SURVEY',
+            'image' => 'images/services/construction.jpg',
+            'alt' => 'Construction surveying activity',
+        ],
+        [
+            'slug' => 'lidar',
+            'title' => 'LiDAR MAPPING',
+            'image' => 'images/services/lidar.jpg',
+            'alt' => 'LiDAR mapping activity',
+        ],
+        [
+            'slug' => '3d-scanning',
+            'title' => '3D SCANNING',
+            'image' => 'images/services/3d-scanning.jpg',
+            'alt' => '3D scanning equipment',
+        ],
+        [
+            'slug' => '3d-model',
+            'title' => '3D MODEL',
+            'image' => 'images/services/3d-model.jpg',
+            'alt' => '3D modeling project',
+        ],
+        [
+            'slug' => 'design-architecture',
+            'title' => 'DESIGN ARCHITECTURE',
+            'image' => 'images/services/architecture.jpg',
+            'alt' => 'Architectural design project',
+        ],
+    ];
+}
 }

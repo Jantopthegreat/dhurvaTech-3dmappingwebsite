@@ -24,6 +24,7 @@ class HomeController extends Controller
             'hero' => $this->pages->homeHero(),
             'aboutPreview' => $this->pages->homeAboutPreview(),
             'services' => array_slice($this->services->all(), 0, 4),
+            'serviceSlides' => $this->services->getHomepageSlides(),
             'projects' => $this->projects->all(),
             'articles' => array_slice($this->articles->all(), 0, 3),
             'cta' => $this->pages->homeCallToAction(),
