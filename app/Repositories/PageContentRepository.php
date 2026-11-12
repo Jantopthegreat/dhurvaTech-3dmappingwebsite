@@ -12,9 +12,9 @@ class PageContentRepository
     {
         return [
             'eyebrow' => 'DHURVA TECH ANGKASA RAYA',
-            'title' => 'Leading on 3D Mapping Solution',
+            'title' => 'Cakrawala Geosurvey',
             'subtitle' => 'See the world from every dimension.',
-            'description' => 'We deliver accurate and professional mapping solutions for different industries using modern surveying technology, drone-based platforms, and geospatial data.',
+            'description' => 'Solusi Presisi untuk Survei dan Pemetaan Anda Hadir sejak tahun 2020, PT Cakrawala Pilar Nusantara (Cakrawala Geosurvey) adalah mitra tepercaya yang siap membantu Anda dengan layanan konsultan survei, pengukuran, dan pemetaan yang akurat.',
             'image' => 'images/hero/lidar-mapping.png',
             'feature' => [
                 'image' => 'images/hero/hero-feature-placeholder.svg',
