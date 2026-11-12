@@ -9,7 +9,7 @@ class ContactController extends Controller
     public function index(): View
     {
         return view('pages.contact', [
-            'contact' => config('jst.contact'),
+            'contact' => config('cakrawala.contact'),
         ]);
     }
 }
