@@ -3,7 +3,7 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | JST site-wide settings
+    | Cakrawala site-wide settings
     |--------------------------------------------------------------------------
     | Keep brand details and contact placeholders here. Replace these values
     | with approved client information before publishing the website.
@@ -11,7 +11,7 @@ return [
     'brand' => [
         'name' => 'DHURVA TECH ANGKASA RAYA',
         'short_name' => 'DTAR',
-        'logo' => 'images/logo/jst-logo-placeholder.svg',
+        'logo' => 'images/logo/logo-cakrawalageosurvey.jpg',
         'tagline' => 'Leading on 3D Mapping Solution',
     ],
 

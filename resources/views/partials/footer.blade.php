@@ -2,7 +2,7 @@
     <div class="container footer-main">
         <div class="footer-brand-block">
             <a class="brand brand-footer" href="{{ route('home') }}">
-                <img src="{{ asset(config('jst.brand.logo')) }}" alt="{{ config('jst.brand.name') }} logo">
+                <img src="{{ asset(config('cakrawala.brand.logo')) }}" alt="{{ config('cakrawala.brand.name') }} logo">
             </a>
             <p>Surveying, mapping, and geospatial information to support clearer project decisions.</p>
         </div>

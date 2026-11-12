@@ -11,7 +11,7 @@ class PageContentRepository
     public function homeHero(): array
     {
         return [
-            'eyebrow' => 'DHURVA TECH ANGKASA RAYA',
+            'eyebrow' => 'Cakrawala Geosurvey',
             'title' => 'Leading on 3D Mapping Solution',
             'subtitle' => 'See the world from every dimension.',
             'description' => 'We deliver accurate and professional mapping solutions for different industries using modern surveying technology, drone-based platforms, and geospatial data.',
