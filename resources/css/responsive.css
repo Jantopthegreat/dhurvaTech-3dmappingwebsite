@@ -68,9 +68,27 @@
         .hero-section {
             min-height: calc(100svh - 84px);
             padding: 100px 0 70px;
+            background-position: center center;
         }
-    .hero-layout { grid-template-columns: 1fr; gap: 35px; }
-    .hero-copy { max-width: 760px; padding-top: 20px; }
+    
+        .hero-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            width: 100%;
+            gap: 0;
+        }
+    
+        .hero-copy {
+            width: 100%;
+            max-width: 760px;
+            min-width: 0;
+            padding-top: 20px;
+        }
+    
+        .hero-copy h1 {
+            max-width: 100%;
+            white-space: normal;
+        }
     .hero-feature-card { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1fr); max-width: 670px; }
     .hero-feature-card > img { width: calc(100% - 14px); height: calc(100% - 28px); min-height: 180px; margin: 14px 0 14px 14px; aspect-ratio: auto; }
     .hero-feature-copy { align-self: center; padding: 22px; }
