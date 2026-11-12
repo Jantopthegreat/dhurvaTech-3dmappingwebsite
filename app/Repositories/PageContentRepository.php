@@ -11,8 +11,8 @@ class PageContentRepository
     public function homeHero(): array
     {
         return [
-            'eyebrow' => 'DHURVA TECH ANGKASA RAYA',
-            'title' => 'Cakrawala Geosurvey',
+            'eyebrow' => 'Cakrawala Geosurvey',
+            'title' => 'Leading on 3D Mapping Solution',
             'subtitle' => 'See the world from every dimension.',
             'description' => 'Solusi Presisi untuk Survei dan Pemetaan Anda Hadir sejak tahun 2020, PT Cakrawala Pilar Nusantara (Cakrawala Geosurvey) adalah mitra tepercaya yang siap membantu Anda dengan layanan konsultan survei, pengukuran, dan pemetaan yang akurat.',
             'image' => 'images/hero/lidar-mapping.png',

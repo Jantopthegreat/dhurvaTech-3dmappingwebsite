@@ -6,11 +6,11 @@
         <a
             class="brand"
             href="{{ route('home') }}"
-            aria-label="{{ config('jst.brand.name') }} home"
+            aria-label="{{ config('cakrawala.brand.name') }} home"
         >
             <img
-                src="{{ asset(config('jst.brand.logo')) }}"
-                alt="{{ config('jst.brand.name') }} logo"
+                src="{{ asset(config('cakrawala.brand.logo')) }}"
+                alt="{{ config('cakrawala.brand.name') }} logo"
             >
         </a>
 

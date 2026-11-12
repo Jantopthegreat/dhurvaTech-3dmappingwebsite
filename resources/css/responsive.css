@@ -100,8 +100,15 @@
     .section-heading-row { align-items: flex-start; flex-direction: column; gap: 20px; }
     .section-heading-aside { max-width: 650px; }
     .cta-panel { align-items: flex-start; flex-direction: column; }
-    .footer-main { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .footer-brand-block { grid-column: 1 / -1; }
+    .site-footer .footer-main {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-brand-block {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
     .page-hero-compact { grid-template-columns: 1fr; padding-top: 84px; }
     .page-hero-compact .page-hero-content { width: min(var(--container-width), calc(100% - 40px)); margin-inline: auto; padding: 75px 0 45px; }
     .page-hero-image { min-height: 300px; max-height: 420px; }
