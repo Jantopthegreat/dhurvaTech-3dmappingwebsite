@@ -15,6 +15,7 @@ class HomeController extends Controller
         private ServiceRepository $services,
         private ProjectRepository $projects,
         private ArticleRepository $articles,
+        private DocumentationRepository $documentation,
     ) {
     }
 
@@ -27,6 +28,7 @@ class HomeController extends Controller
             'serviceSlides' => $this->services->getHomepageSlides(),
             'projects' => $this->projects->all(),
             'articles' => array_slice($this->articles->all(), 0, 3),
+            'documentation' => $this->documentation->homePreview(),
             'cta' => $this->pages->homeCallToAction(),
         ]);
     }
