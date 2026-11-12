@@ -475,3 +475,134 @@
         transition: none !important;
     }
 }
+
+/* =====================================
+   HOMEPAGE SERVICES - FIT VIEWPORT
+===================================== */
+
+.home-services {
+    display: flex;
+    flex-direction: column;
+
+    height: calc(100svh - 70px);
+    min-height: 0;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    background: #061b3b;
+}
+
+/* Heading */
+.home-services-heading {
+    flex-shrink: 0;
+}
+
+/* Content */
+.home-services-content {
+    flex: 1;
+    min-height: 0;
+
+    display: flex;
+
+    padding: clamp(18px, 3svh, 30px) 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.home-services-content>.container {
+    width: min(var(--container-width), calc(100% - 40px));
+    max-width: 100%;
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: clamp(16px, 2.5svh, 26px);
+
+    min-height: 0;
+}
+
+/* Introduction */
+.home-services-intro {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+/* Slider */
+.home-service-slider {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    aspect-ratio: auto;
+    max-height: none;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slider Track */
+.home-service-slider-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Slide Images */
+.home-service-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =====================================
+   RESPONSIVE TABLET & MOBILE
+===================================== */
+
+@media (max-width: 860px) {
+
+    .home-services {
+        height: auto;
+        min-height: calc(100svh - 84px);
+        overflow: visible;
+    }
+
+    .home-services-content {
+        padding: 30px 0 40px;
+    }
+
+    .home-services-content>.container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        width: min(var(--container-width), calc(100% - 40px));
+    }
+
+    .home-services-intro {
+        margin-bottom: 0;
+    }
+
+    .home-service-slider {
+        height: auto;
+        min-height: 350px;
+        aspect-ratio: 1.6 / 1;
+    }
+
+    .home-service-slider-track {
+        position: absolute;
+        inset: 0;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .home-service-slider {
+        min-height: 360px;
+        aspect-ratio: 4 / 5;
+    }
+
+}
