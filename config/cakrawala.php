@@ -9,8 +9,8 @@ return [
     | with approved client information before publishing the website.
     */
     'brand' => [
-        'name' => 'DHURVA TECH ANGKASA RAYA',
-        'short_name' => 'DTAR',
+        'name' => 'Cakrawala Geosurvey',
+        'short_name' => 'CG',
         'logo' => 'images/logo/logo-cakrawalageosurvey.jpg',
         'tagline' => 'Leading on 3D Mapping Solution',
     ],
