@@ -22,6 +22,7 @@ class ContactController extends Controller
 
         return view('pages.contact', [
             'contact' => $contact,
+            //'contact' => config('cakrawala.contact'),
         ]);
     }
 

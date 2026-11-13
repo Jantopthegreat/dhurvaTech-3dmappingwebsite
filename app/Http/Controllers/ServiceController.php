@@ -11,12 +11,13 @@ class ServiceController extends Controller
     {
     }
 
-    public function index(): View
-    {
-        return view('pages.services.index', [
-            'services' => $this->services->all(),
-        ]);
-    }
+public function index(): View
+{
+    return view('pages.services.index', [
+        'services' => $this->services->all(),
+        'serviceSlides' => $this->services->getServicePageSlides(),
+    ]);
+}
 
     public function show(string $slug): View
     {

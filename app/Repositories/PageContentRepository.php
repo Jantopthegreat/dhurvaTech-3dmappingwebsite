@@ -12,10 +12,10 @@ class PageContentRepository
     {
         return [
             'eyebrow' => 'Cakrawala Geosurvey',
-            'title' => 'Leading on 3D Mapping Solution',
-            'subtitle' => 'See the world from every dimension.',
-            'description' => 'We deliver accurate and professional mapping solutions for different industries using modern surveying technology, drone-based platforms, and geospatial data.',
-            'image' => 'images/hero/lidar-mapping.png',
+            'title' => 'Cakrawala Geosurvey',
+            'subtitle' => 'Cakrawala Geosurvey.',
+            'description' => 'Solusi Presisi untuk Survei dan Pemetaan Anda Hadir sejak tahun 2020, PT Cakrawala Pilar Nusantara (Cakrawala Geosurvey) adalah mitra tepercaya yang siap membantu Anda dengan layanan konsultan survei, pengukuran, dan pemetaan yang akurat.',
+            'image' => 'images/hero/herolandscape.png',
             'feature' => [
                 'image' => 'images/hero/hero-feature-placeholder.svg',
                 'title' => 'Accurate Data for Every Project',

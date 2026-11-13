@@ -1,13 +1,117 @@
+
 @extends('layouts.app')
 
-@section('title', 'JST Store | ' . config('jst.brand.name'))
-@section('meta_description', 'Browse sample JST equipment and products. Product enquiries are handled through WhatsApp.')
+@section('title', 'Katalog | ' . config('jst.brand.name'))
+@section('meta_description', 'Jelajahi katalog peralatan survei untuk disewa maupun dibeli.')
 
 @section('content')
-    <section class="page-hero page-hero-simple"><div class="container page-hero-content hero-enter"><p class="eyebrow eyebrow-light">JST STORE</p><h1>Equipment for your next project</h1><p>Browse the sample catalogue and contact the team for availability and pricing. Checkout and online payments are not included.</p></div></section>
-    <section class="section"><div class="container reveal"><div class="store-intro"><p class="eyebrow">PRODUCT CATALOGUE</p><p>Sample products only. Replace each image, description, and availability status with approved product data.</p></div><div class="product-grid">
-        @foreach($products as $product)
-            <x-product-card :product="$product" />
-        @endforeach
-    </div></div></section>
+
+<main class="catalog-page">
+
+    <div class="container">
+
+        {{-- Catalog Header --}}
+        <header class="catalog-header">
+
+            <h1>Katalog</h1>
+
+            <form
+                action="{{ route('store.index') }}"
+                method="GET"
+                class="catalog-search-form"
+            >
+
+                <input
+                    type="search"
+                    name="q"
+                    value="{{ request('q') }}"
+                    placeholder="Search"
+                    aria-label="Cari produk"
+                >
+
+                <select name="category" aria-label="Filter kategori">
+
+                    <option value="">Semua Kategori</option>
+
+                    @foreach($categories as $category)
+                        <option
+                            value="{{ $category }}"
+                            @selected(request('category') === $category)
+                        >
+                            {{ $category }}
+                        </option>
+                    @endforeach
+
+                </select>
+
+                <button type="submit" aria-label="Cari">
+                    <span aria-hidden="true">⌕</span>
+                </button>
+
+            </form>
+
+        </header>
+
+
+        {{-- RENT PRODUCTS --}}
+        <section class="catalog-group">
+
+            <div class="catalog-group-heading">
+                <h2>Alat untuk Disewa</h2>
+                <p>Peralatan survei yang tersedia untuk kebutuhan proyek Anda.</p>
+            </div>
+
+            <div class="product-grid">
+
+                @forelse($rentProducts as $product)
+                    <x-product-card :product="$product" />
+                @empty
+                    <p class="catalog-empty">
+                        Tidak ada produk sewa yang ditemukan.
+                    </p>
+                @endforelse
+
+            </div>
+
+            @if($rentProducts->hasPages())
+                <div class="catalog-pagination">
+                    {{ $rentProducts->links() }}
+                </div>
+            @endif
+
+        </section>
+
+
+        {{-- SALE PRODUCTS --}}
+        <section class="catalog-group">
+
+            <div class="catalog-group-heading">
+                <h2>Alat untuk Dijual</h2>
+                <p>Peralatan survei dan pemetaan yang tersedia untuk pembelian.</p>
+            </div>
+
+            <div class="product-grid">
+
+                @forelse($saleProducts as $product)
+                    <x-product-card :product="$product" />
+                @empty
+                    <p class="catalog-empty">
+                        Tidak ada produk jual yang ditemukan.
+                    </p>
+                @endforelse
+
+            </div>
+
+            @if($saleProducts->hasPages())
+                <div class="catalog-pagination">
+                    {{ $saleProducts->links() }}
+                </div>
+            @endif
+
+        </section>
+
+    </div>
+
+</main>
+
 @endsection
