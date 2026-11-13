@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 
-@section('title', 'Layanan | ' . config('jst.brand.name'))
+@section('title', 'Layanan | ' . config('cakrawala.brand.name'))
 @section('meta_description', 'Jelajahi layanan survei, pemetaan, LiDAR, bathymetry, dan pemodelan 3D Cakrawala Geosurvey.')
 
 @section('content')

@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 
-@section('title', 'Katalog | ' . config('jst.brand.name'))
+@section('title', 'Katalog | ' . config('cakrawala.brand.name'))
 @section('meta_description', 'Jelajahi katalog peralatan survei untuk disewa maupun dibeli.')
 
 @section('content')

@@ -1,8 +1,8 @@
 <section class="section section-about" id="about-preview">
     <div class="container about-grid reveal">
         <div class="about-image-frame">
-            <img src="{{ asset($aboutPreview['image']) }}" alt="JST team and mapping workflow placeholder" loading="lazy">
-            <div class="image-note"><span class="note-mark">JST</span><span>Technology for spatial understanding</span></div>
+            <img src="{{ asset($aboutPreview['image']) }}" alt="Cakrawala team and mapping workflow placeholder" loading="lazy">
+            <div class="image-note"><span class="note-mark">Cakrawala</span><span>Technology for spatial understanding</span></div>
         </div>
         <div class="about-copy reveal">
             <p class="eyebrow">{{ $aboutPreview['eyebrow'] }}</p>
@@ -13,7 +13,8 @@
                     <div class="stat-item"><strong>{{ $stat['value'] }}</strong><span>{{ $stat['label'] }}</span></div>
                 @endforeach
             </div>
-            <a class="button button-dark" href="{{ route('about') }}">Discover JST <span aria-hidden="true">↗</span></a>
+            <a class="button button-dark" href="{{ route('about') }}">Discover Cakrawala
+                 <span aria-hidden="true">↗</span></a>
         </div>
     </div>
 </section>

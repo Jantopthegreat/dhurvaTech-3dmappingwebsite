@@ -21,6 +21,6 @@ return [
         'phone' => '+62 000 0000 0000', // Placeholder only.
         'address' => 'Company address will be added here.',
         'office_hours' => 'Monday–Friday, 09:00–17:00 WIB',
-        'whatsapp_message' => 'Hello JST, I would like to ask about your mapping services.',
+        'whatsapp_message' => 'Hello Cakrawala, I would like to ask about your mapping services.',
     ],
 ];
