@@ -15,7 +15,7 @@ class DocumentationRepository
             'background_image' => 'images/documentation/background/documentation-bg.jpg',
 
             // Bottom section description
-            'description' => 'Jelajahi rekam jejak kami melalui galeri dokumentasi kegiatan di lapangan. Mulai dari kegiatan scanning hingga survei batimetri, ini adalah bukti nyata komitmen kami dalam menghadirkan hasil pengukuran yang presisi, andal, dan terpercaya untuk setiap proyek Anda.',
+            'description' => 'Jelajahi rekam jejak kami melalui galeri dokumentasi kegiatan di lapangan. Mulai dari kegiatan scanning hingga survei batimetri, ini adalah bukti nyata komitmen Cakrawala Geosurvey dalam memberikan hasil pengukuran yang presisi, andal, dan tepercaya untuk setiap proyek Anda.',
 
             // Video documentation
             'videos' => [
@@ -23,14 +23,14 @@ class DocumentationRepository
                     'id' => 'survey-video',
                     'title' => 'Dokumentasi Kegiatan Survey',
                     'description' => 'Dokumentasi kegiatan survei dan pengukuran lapangan yang dilakukan oleh tim profesional kami.',
-                    'video_path' => null,
+                    'video_path' => 'videos/video-documentation.mp4',
                     'embed_url' => null,
                 ],
                 [
                     'id' => 'mapping-video',
                     'title' => 'Dokumentasi Kegiatan Mapping',
                     'description' => 'Dokumentasi proses pemetaan menggunakan teknologi dan peralatan survei modern.',
-                    'video_path' => null,
+                    'video_path' => 'videos/video-documentation.mp4',
                     'embed_url' => null,
                 ],
             ],

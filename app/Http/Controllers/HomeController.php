@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\ArticleRepository;
 use App\Repositories\PageContentRepository;
 use App\Repositories\ProjectRepository;
 use App\Repositories\ServiceRepository;
+use App\Repositories\DocumentationRepository;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -13,8 +13,6 @@ class HomeController extends Controller
     public function __construct(
         private PageContentRepository $pages,
         private ServiceRepository $services,
-        private ProjectRepository $projects,
-        private ArticleRepository $articles,
         private DocumentationRepository $documentation,
     ) {
     }
@@ -23,13 +21,9 @@ class HomeController extends Controller
     {
         return view('pages.home', [
             'hero' => $this->pages->homeHero(),
-            'aboutPreview' => $this->pages->homeAboutPreview(),
             'services' => array_slice($this->services->all(), 0, 4),
             'serviceSlides' => $this->services->getHomepageSlides(),
-            'projects' => $this->projects->all(),
-            'articles' => array_slice($this->articles->all(), 0, 3),
             'documentation' => $this->documentation->homePreview(),
-            'cta' => $this->pages->homeCallToAction(),
         ]);
     }
 }
