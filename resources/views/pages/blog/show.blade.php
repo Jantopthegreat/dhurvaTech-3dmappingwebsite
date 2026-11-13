@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $article['title'] . ' | JST Blog')
+@section('title', $article['title'] . ' | Cakrawala Blog')
 @section('meta_description', $article['excerpt'])
 
 @section('content')

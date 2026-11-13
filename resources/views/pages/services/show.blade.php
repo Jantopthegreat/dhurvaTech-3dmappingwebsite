@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $service['title'] . ' | ' . config('jst.brand.name'))
+@section('title', $service['title'] . ' | ' . config('cakrawala.brand.name'))
 @section('meta_description', $service['short_description'])
 
 @section('content')

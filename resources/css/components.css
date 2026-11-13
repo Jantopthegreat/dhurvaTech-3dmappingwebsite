@@ -51,4 +51,115 @@
 /* Floating WhatsApp button */
 .whatsapp-float { position: fixed; z-index: 60; right: 26px; bottom: 25px; display: grid; width: 62px; height: 62px; place-items: center; border: 4px solid rgba(255,255,255,.55); border-radius: 50%; color: #fff; background: var(--color-green); box-shadow: 0 8px 28px rgba(0,0,0,.2); transition: transform .2s ease; }
 .whatsapp-float:hover { transform: translateY(-4px) scale(1.03); }
-.whatsapp-symbol { display: grid; width: 37px; height: 37px; place-items: center; border: 2px solid #fff; border-radius: 50%; font-size: .67rem; font-weight: 850; letter-spacing: -.02em; }
+.whatsapp-icon {
+    width: 37px;
+    height: 37px;
+    color: #fff;
+    display: block;
+}
+
+/* WhatsApp shake animation */
+.whatsapp-float {
+    animation: whatsapp-shake 3s ease-in-out infinite;
+}
+
+@keyframes whatsapp-shake {
+
+    0%,
+    80%,
+    100% {
+        transform: translateX(0) rotate(0);
+    }
+
+    82% {
+        transform: translateX(-3px) rotate(-6deg);
+    }
+
+    84% {
+        transform: translateX(3px) rotate(6deg);
+    }
+
+    86% {
+        transform: translateX(-3px) rotate(-6deg);
+    }
+
+    88% {
+        transform: translateX(3px) rotate(6deg);
+    }
+
+    90% {
+        transform: translateX(-2px) rotate(-3deg);
+    }
+
+    92% {
+        transform: translateX(0) rotate(0);
+    }
+}
+
+/* Pause animation when hovered */
+.whatsapp-float:hover {
+    animation-play-state: paused;
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-float {
+        animation: none;
+    }
+}
+
+/* WhatsApp Radar Wave */
+.whatsapp-float {
+    position: fixed;
+    isolation: isolate;
+}
+
+/* Radar waves */
+.whatsapp-float::before,
+.whatsapp-float::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(37, 211, 102, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    animation: whatsapp-radar 2.8s ease-out infinite;
+}
+
+.whatsapp-float::after {
+    animation-delay: 1.4s;
+}
+
+/* Keep icon above the waves */
+.whatsapp-icon {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes whatsapp-radar {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(2.3);
+        opacity: 0;
+    }
+}
+
+/* Hover effect */
+.whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .whatsapp-float::before,
+    .whatsapp-float::after {
+        animation: none;
+    }
+}

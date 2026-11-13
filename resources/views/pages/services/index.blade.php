@@ -1,7 +1,6 @@
-
 @extends('layouts.app')
 
-@section('title', 'Layanan | ' . config('jst.brand.name'))
+@section('title', 'Layanan | ' . config('cakrawala.brand.name'))
 @section('meta_description', 'Jelajahi layanan survei, pemetaan, LiDAR, bathymetry, dan pemodelan 3D Cakrawala Geosurvey.')
 
 @section('content')
@@ -15,6 +14,7 @@
             </div>
         </div>
 
+        {{-- Service Content --}}
         <div class="services-page-content">
             <div class="container">
 
@@ -26,11 +26,11 @@
                 {{-- Service Explanations --}}
                 @include('pages.services.sections.service-descriptions')
 
-                {{-- Contact CTA --}}
-                @include('pages.services.sections.contact-cta')
-
             </div>
         </div>
+
+        {{-- Rental & Sale Catalog Preview --}}
+        @include('pages.services.sections.catalog-preview')
 
     </main>
 

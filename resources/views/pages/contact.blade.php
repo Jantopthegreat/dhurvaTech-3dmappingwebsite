@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Contact | ' . config('jst.brand.name'))
-@section('meta_description', 'Contact JST to discuss surveying, mapping, and geospatial project requirements.')
+@section('title', 'Contact | ' . config('cakrawala.brand.name'))
+@section('meta_description', 'Contact Cakrawala to discuss surveying, mapping, and geospatial project requirements.')
 
 @section('content')
     <section class="page-hero page-hero-simple"><div class="container page-hero-content hero-enter"><p class="eyebrow eyebrow-light">CONTACT JST</p><h1>Let’s talk about your project</h1><p>Share your requirements and the team can help identify the most suitable surveying or mapping approach.</p></div></section>

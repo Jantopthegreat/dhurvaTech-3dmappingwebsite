@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $product['name'] . ' | JST Store')
+@section('title', $product['name'] . ' | CAKRAWALA Store')
 @section('meta_description', $product['description'])
 
 @section('content')
