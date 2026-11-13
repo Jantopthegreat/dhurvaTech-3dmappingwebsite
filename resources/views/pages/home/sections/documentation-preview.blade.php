@@ -22,53 +22,26 @@
                         {{-- Video Placeholder / Player --}}
                         <div class="documentation-video-media">
 
-                            @if(!empty($video['embed_url']))
-
-                                <iframe
-                                    src="{{ $video['embed_url'] }}"
-                                    title="{{ $video['title'] }}"
-                                    loading="lazy"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                ></iframe>
-
-                            @elseif(!empty($video['video_path']))
-
-                                <video controls preload="metadata">
-                                    <source
-                                        src="{{ asset($video['video_path']) }}"
-                                        type="video/mp4"
-                                    >
-                                    Browser kamu tidak mendukung pemutaran video.
-                                </video>
-
-                            @else
-
-                                <div class="documentation-video-placeholder">
-                                    <span class="documentation-play-icon">
-                                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                                            <path d="M8 5.5L19 12L8 18.5V5.5Z"
-                                                  fill="currentColor"/>
-                                        </svg>
-                                    </span>
-
-                                    <span class="documentation-placeholder-label">
-                                        Video Documentation
-                                    </span>
-                                </div>
-
-                            @endif
+                            @if (!empty($video['video_path']))
+                       <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            controls
+                            preload="auto"
+                        >
+                            <source
+                                src="{{ asset($video['video_path']) }}"
+                                type="video/mp4"
+                            >
+                        </video>
+                        @endif
 
                         </div>
 
                         {{-- Video Description --}}
                         <div class="documentation-video-copy">
-
-                            <span class="documentation-eyebrow">
-                                VIDEO DOCUMENTATION
-                            </span>
-
-                            <h3>{{ $video['title'] }}</h3>
 
                             <p>{{ $video['description'] }}</p>
 
