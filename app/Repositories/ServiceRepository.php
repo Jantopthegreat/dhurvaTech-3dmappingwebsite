@@ -95,6 +95,7 @@ class ServiceRepository
     //             'highlights' => ['Site-context visualization', 'Design coordination support', 'Presentation-ready material'],
     //         ],
     //     ];
+        return [];
     }
 
     public function findBySlug(string $slug): ?array
@@ -108,92 +109,25 @@ class ServiceRepository
         return null;
     }
     public function getHomepageSlides(): array
-{
-    return [
-        [
-            'slug' => 'topography',
-            'title' => 'TOPOGRAPHY SURVEY',
-            'image' => 'images/services/topography.jpg',
-            'alt' => 'Topography surveying equipment',
-        ],
-        [
-            'slug' => 'bathymetry',
-            'title' => 'BATHYMETRY SURVEY',
-            'image' => 'images/services/bathymetry.jpg',
-            'alt' => 'Bathymetry surveying activity',
-        ],
-        [
-            'slug' => 'lidar',
-            'title' => 'LiDAR SURVEY',
-            'image' => 'images/services/lidar.jpg',
-            'alt' => 'LiDAR mapping activity',
-        ],
-                [
-            'slug' => 'construction',
-            'title' => 'CONSTRUCTION SURVEY',
-            'image' => 'images/services/construction.jpg',
-            'alt' => 'Construction monitoring activity',
-        ],
-        [
-            'slug' => 'catalog',
-            'title' => 'KATALOG JUAL BELI & SEWA',
-            'image' => 'images/services/catalog.jpg',
-            'alt' => '3D scanning equipment',
-        ],
-    ];
-}
+    {
+        return array_slice($this->slidesFromDatabase(), 0, 5);
+    }
 
-public function getServicePageSlides(): array
-{
-    return [
-        [
-            'slug' => 'topography',
-            'title' => 'TOPOGRAPHY SURVEY',
-            'image' => 'images/services/topography.jpg',
-            'alt' => 'Topography surveying activity',
-        ],
-        [
-            'slug' => 'bathymetry',
-            'title' => 'BATHYMETRY SURVEY',
-            'image' => 'images/services/bathymetry.jpg',
-            'alt' => 'Bathymetry surveying activity',
-        ],
-        [
-            'slug' => 'survey-drone',
-            'title' => 'DRONE SURVEY',
-            'image' => 'images/services/lidar.jpg',
-            'alt' => 'Drone surveying activity',
-        ],
-        [
-            'slug' => 'construction',
-            'title' => 'CONSTRUCTION SURVEY',
-            'image' => 'images/services/construction.jpg',
-            'alt' => 'Construction surveying activity',
-        ],
-        [
-            'slug' => 'lidar',
-            'title' => 'LiDAR SURVEY',
-            'image' => 'images/services/lidar.jpg',
-            'alt' => 'LiDAR surveying activity',
-        ],
-        [
-            'slug' => '3d-scanning',
-            'title' => '3D SCANNING',
-            'image' => 'images/services/3d-scanning.jpg',
-            'alt' => '3D scanning activity',
-        ],
-        [
-            'slug' => '3d-model',
-            'title' => '3D MODEL',
-            'image' => 'images/services/3d-model.jpg',
-            'alt' => '3D modelling activity',
-        ],
-        [
-            'slug' => 'design-architecture',
-            'title' => 'DESIGN ARCHITECTURE',
-            'image' => 'images/services/design-architecture.jpg',
-            'alt' => 'Architectural design activity',
-        ],
-    ];
-}
+    public function getServicePageSlides(): array
+    {
+        return $this->slidesFromDatabase();
+    }
+
+    private function slidesFromDatabase(): array
+    {
+        return array_map(
+            static fn (array $service): array => [
+                'slug' => $service['slug'],
+                'title' => mb_strtoupper($service['title']),
+                'image' => $service['image'],
+                'alt' => $service['title'] . ' service',
+            ],
+            $this->all(),
+        );
+    }
 }

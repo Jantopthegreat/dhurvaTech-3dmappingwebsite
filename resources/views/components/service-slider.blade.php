@@ -14,7 +14,7 @@
                 aria-hidden="{{ $loop->first ? 'false' : 'true' }}"
             >
                 <img
-                    src="{{ asset($slide['image']) }}"
+                    src="{{ $slide['image'] }}"
                     alt="{{ $slide['alt'] }}"
                     loading="{{ $loop->first ? 'eager' : 'lazy' }}"
                 >

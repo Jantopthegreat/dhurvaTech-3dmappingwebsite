@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Article;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -26,6 +27,23 @@ class DatabaseSeeder extends Seeder
                 'is_admin' => true,
             ],
         );
+
+        foreach ([
+            ['mapping-drone', 'Mapping Drone', 'Drone Platform', 'rent', 'Drone pemetaan untuk akuisisi data udara dan dokumentasi area proyek.', 'images/products/product-drone-placeholder.svg'],
+            ['gnss-receiver', 'GNSS Receiver', 'Survey Equipment', 'rent', 'Perangkat GNSS untuk kebutuhan pengukuran dan positioning lapangan.', 'images/products/product-gnss-placeholder.svg'],
+            ['lidar-sensor', 'LiDAR Sensor', 'Mapping Sensor', 'sale', 'Sensor LiDAR untuk pengambilan data spasial dan pemodelan 3D.', 'images/products/product-lidar-placeholder.svg'],
+            ['survey-accessories', 'Survey Accessories', 'Accessories', 'sale', 'Perlengkapan pendukung untuk kegiatan survei dan pemetaan.', 'images/products/product-accessories-placeholder.svg'],
+        ] as [$slug, $name, $category, $type, $description, $image]) {
+            Product::updateOrCreate(['slug' => $slug], [
+                'name' => $name,
+                'category' => $category,
+                'type' => $type,
+                'description' => $description,
+                'image' => $image,
+                'availability' => 'Hubungi Kami',
+                'price_label' => 'Hubungi Kami',
+            ]);
+        }
 
         // foreach ([
         //     ['understanding-drone-mapping', 'Understanding Drone Mapping for Modern Projects', 'Drone Survey', '2026-10-01', '5 min read', 'A practical introduction to how aerial data can support site documentation and planning.', 'images/blog/article-drone-placeholder.svg'],
