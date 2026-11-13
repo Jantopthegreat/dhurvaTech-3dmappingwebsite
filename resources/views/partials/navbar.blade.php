@@ -37,23 +37,12 @@
                 Beranda
             </a>
 
-            <details class="nav-dropdown {{ request()->routeIs('services.*') ? 'is-current' : '' }}">
-                <summary class="nav-link {{ request()->routeIs('services.*') ? 'is-active' : '' }}">
-                    Layanan
-                </summary>
-
-                <div class="dropdown-menu">
-                    <a href="{{ route('services.index') }}">
-                        Semua Layanan
-                    </a>
-
-                    @foreach($navigationServices as $service)
-                        <a href="{{ route('services.show', $service['slug']) }}">
-                            {{ $service['title'] }}
-                        </a>
-                    @endforeach
-                </div>
-            </details>
+<a
+    href="{{ route('services.index') }}"
+    class="nav-link {{ request()->routeIs('services.*') ? 'is-active' : '' }}"
+>
+    Layanan
+</a>
 
             <a
                 class="nav-link {{ request()->routeIs('store.*') ? 'is-active' : '' }}"
