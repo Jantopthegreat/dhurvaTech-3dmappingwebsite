@@ -62,5 +62,17 @@
             <a href="{{ route('store.index') }}">Jual Beli</a>
         </div>
 
+        <div class="footer-column footer-contact">
+            <h2>Contact</h2>
+            <a href="mailto:{{ $contact['email'] }}">{{ $contact['email'] }}</a>
+            <p>{{ $contact['address'] }}</p>
+            <a href="{{ route('contact') }}" class="footer-contact-link">Contact our team <span aria-hidden="true">→</span></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+            <p>© {{ date('Y') }} {{ config('jst.brand.name') }}. All rights reserved.</p>
+            <p class="demo-note">Initial frontend skeleton · Sample content</p>
+        </div>
     </div>
 </footer>

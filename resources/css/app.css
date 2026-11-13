@@ -3,3 +3,6 @@
 @import './components.css';
 @import './pages.css';
 @import './responsive.css';
+@import './admin.css';
+@import './adminblog.css';
+@import './blog.css';
