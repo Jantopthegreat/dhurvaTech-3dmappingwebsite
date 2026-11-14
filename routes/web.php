@@ -29,17 +29,12 @@ Route::prefix('admin')->name('admin.')->group(function (): void {
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/about-us', [AboutController::class, 'index'])->name('about');
 
 Route::prefix('services')->name('services.')->group(function (): void {
     Route::get('/', [ServiceController::class, 'index'])->name('index');
     Route::get('/{slug}', [ServiceController::class, 'show'])->name('show');
 });
 
-Route::prefix('blog')->name('blog.')->group(function (): void {
-    Route::get('/', [BlogController::class, 'index'])->name('index');
-    Route::get('/{slug}', [BlogController::class, 'show'])->name('show');
-});
 
 Route::prefix('store')->name('store.')->group(function (): void {
     Route::get('/', [StoreController::class, 'index'])->name('index');

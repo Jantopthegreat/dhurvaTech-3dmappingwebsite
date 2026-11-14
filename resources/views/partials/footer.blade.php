@@ -71,7 +71,7 @@
     </div>
     <div class="footer-bottom">
         <div class="container footer-bottom-inner">
-            <p>© {{ date('Y') }} {{ config('jst.brand.name') }}. All rights reserved.</p>
+            <p>© {{ date('Y') }} {{ config('cakrawala.brand.name') }}. All rights reserved.</p>
             <p class="demo-note">Initial frontend skeleton · Sample content</p>
         </div>
     </div>

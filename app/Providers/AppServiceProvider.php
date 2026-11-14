@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
             $contact = Cache::remember('site_contact', 3600, function () {
                 $row = Contact::oldest('id')->first();
 
-                return array_merge(config('jst.contact'), array_filter([
+                return array_merge(config('cakrawala.contact'), array_filter([
                     'email'    => $row?->email,
                     'whatsapp' => $row?->no_hp,
                     'address'  => $row?->alamat,  

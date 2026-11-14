@@ -12,7 +12,7 @@ class ContactController extends Controller
     public function index(): View
     {
         $contactSettings = Contact::query()->latest('id')->first();
-        $contact = config('jst.contact');
+        $contact = config('cakrawala.contact');
 
         if ($contactSettings !== null) {
             $contact['whatsapp'] = $contactSettings->no_hp;
@@ -32,7 +32,7 @@ class ContactController extends Controller
         $phone = preg_replace(
             '/\D+/',
             '',
-            (string) ($contactSettings?->no_hp ?: config('jst.contact.whatsapp')),
+            (string) ($contactSettings?->no_hp ?: config('cakrawala.contact.whatsapp')),
         );
         $message = implode("\n", [
             'Halo DHURVA TECH ANGKASA RAYA,',
