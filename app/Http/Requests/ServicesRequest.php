@@ -44,7 +44,7 @@ class ServicesRequest extends FormRequest
             'deskripsi'       => ['required', 'string', 'max:5000'],
             'judul_point'     => ['required', 'string', 'max:255'],
             'point'           => ['required', 'string', 'max:5000'],
-            'image'           => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,svg', 'max:2048'],
+            'image'           => ['nullable', 'file', 'mimes:jpg,jpeg,png,webp', 'max:8192'],
             'content'         => ['required', 'array'],
             'content.*'       => ['nullable'],
         ];
@@ -61,6 +61,16 @@ class ServicesRequest extends FormRequest
             'point'           => 'point',
             'image'           => 'gambar',
             'content'         => 'konten',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'image.uploaded' => 'Gambar gagal diunggah. Pastikan ukuran file tidak melebihi 8 MB.',
+            'image.file' => 'Gambar gagal diunggah. Pastikan ukuran file tidak melebihi 8 MB.',
+            'image.mimes' => 'Format gambar harus JPG, JPEG, PNG, atau WEBP.',
+            'image.max' => 'Ukuran gambar maksimal 8 MB.',
         ];
     }
 }

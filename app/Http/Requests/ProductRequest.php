@@ -12,6 +12,15 @@ class ProductRequest extends FormRequest
         return true;
     }
 
+    protected function prepareForValidation(): void
+    {
+        if ($this->input('category') === '__new__') {
+            $this->merge([
+                'category' => trim((string) $this->input('category_new')),
+            ]);
+        }
+    }
+
     public function rules(): array
     {
         $product = $this->route('product');

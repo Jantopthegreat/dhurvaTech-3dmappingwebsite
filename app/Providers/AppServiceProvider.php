@@ -19,15 +19,15 @@ class AppServiceProvider extends ServiceProvider
     {
         // Both shared templates need the service list for their navigation links.
         // A view composer keeps data-fetching logic out of the Blade templates.
-        View::composer(['partials.navbar', 'partials.footer'], function ($view): void {
+        View::composer(['partials.navbar', 'partials.footer', 'partials.whatsapp-button'], function ($view): void {
             $view->with('navigationServices', app(ServiceRepository::class)->all());
-            $contact = Cache::remember('site_contact', 3600, function () {
-                $row = Contact::oldest('id')->first();
+            $contact = Cache::remember('site_contact', 3600, function (): array {
+                $row = Contact::latest('id')->first();
 
                 return array_merge(config('jst.contact'), array_filter([
-                    'email'    => $row?->email,
+                    'email' => $row?->email,
                     'whatsapp' => $row?->no_hp,
-                    'address'  => $row?->alamat,  
+                    'address' => $row?->alamat,
                 ]));
             });
 

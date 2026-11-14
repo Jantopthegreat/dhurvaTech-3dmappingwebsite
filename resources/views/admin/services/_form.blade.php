@@ -42,8 +42,8 @@
         @error('content') <p class="admin-field-error">{{ $message }}</p> @enderror
     </div>
     <div class="admin-editor-field admin-editor-field-wide @error('image') has-error @enderror">
-        <label for="image">Gambar layanan <span>(opsional, maksimal 2 MB)</span></label>
-        <input id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp,image/svg+xml">
+        <label for="image">Gambar layanan <span>(opsional, maksimal 8 MB)</span></label>
+        <input id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp">
         @if (isset($service) && $service->image)
             <img class="admin-image-preview is-visible" src="{{ str_starts_with($service->image, 'services/') ? asset('storage/' . $service->image) : asset($service->image) }}" alt="Gambar {{ $service->judul }}">
         @endif

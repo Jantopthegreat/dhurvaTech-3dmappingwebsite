@@ -13,21 +13,27 @@
     </div>
     <div class="admin-editor-field @error('category') has-error @enderror">
         <label for="category">Kategori</label>
-        <input
-            id="category"
-            name="category"
-            type="text"
-            list="product-categories"
-            value="{{ old('category', $product->category ?? '') }}"
-            placeholder="Pilih atau ketik kategori baru"
-            required
-        >
-        <datalist id="product-categories">
+        @php
+            $selectedCategory = old('category', $product->category ?? '');
+            $isNewCategory = $selectedCategory !== '' && !in_array($selectedCategory, $categories ?? [], true);
+        @endphp
+        <select id="category" name="category" required>
+            <option value="" disabled @selected($selectedCategory === '')>Pilih kategori</option>
             @foreach ($categories ?? [] as $category)
-                <option value="{{ $category }}">
+                <option value="{{ $category }}" @selected($selectedCategory === $category)>{{ $category }}</option>
             @endforeach
-        </datalist>
-        <small>Pilih kategori yang tersedia atau ketik kategori baru.</small>
+            <option value="__new__" @selected($isNewCategory)>+ Tambah kategori baru</option>
+        </select>
+        <input
+            id="category-new"
+            name="category_new"
+            type="text"
+            value="{{ $isNewCategory ? $selectedCategory : old('category_new') }}"
+            placeholder="Masukkan kategori baru"
+            @disabled(!$isNewCategory)
+            @required($isNewCategory)
+        >
+        <small>Pilih kategori yang tersedia atau tambah kategori baru.</small>
         @error('category') <p class="admin-field-error">{{ $message }}</p> @enderror
     </div>
     <div class="admin-editor-field @error('type') has-error @enderror">
@@ -67,3 +73,22 @@
     <a class="admin-back-link" href="{{ route('admin.products.index') }}">Batal</a>
     <button class="admin-button" type="submit">Simpan produk</button>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const category = document.querySelector('#category');
+        const newCategory = document.querySelector('#category-new');
+
+        if (!category || !newCategory) return;
+
+        const toggleNewCategory = () => {
+            const isNew = category.value === '__new__';
+            newCategory.disabled = !isNew;
+            newCategory.required = isNew;
+            if (isNew) newCategory.focus();
+        };
+
+        category.addEventListener('change', toggleNewCategory);
+        toggleNewCategory();
+    });
+</script>

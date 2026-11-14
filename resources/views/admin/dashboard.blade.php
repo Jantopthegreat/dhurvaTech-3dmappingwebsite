@@ -16,6 +16,7 @@
             <a class="admin-nav-link" href="{{ route('admin.contact.index') }}">Kontak</a>
             <a class="admin-nav-link" href="{{ route('admin.services.index') }}">Layanan</a>
             <a class="admin-nav-link" href="{{ route('admin.products.index') }}">Katalog</a>
+            <a class="admin-nav-link" href="{{ route('admin.mitra.index') }}">Mitra</a>
             <a class="admin-nav-link" href="{{ route('home') }}">Lihat website</a>
             <form method="POST" action="{{ route('admin.logout') }}">
                 @csrf

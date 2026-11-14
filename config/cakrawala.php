@@ -17,7 +17,6 @@ return [
 
     'contact' => [
         'whatsapp' => '6280000000000', // Placeholder only. Replace with the client's WhatsApp number.
-        'email' => 'hello@example.com', // Placeholder only.
         'phone' => '+62 000 0000 0000', // Placeholder only.
         'address' => 'Company address will be added here.',
         'office_hours' => 'Monday–Friday, 09:00–17:00 WIB',

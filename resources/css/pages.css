@@ -80,6 +80,13 @@
 .section-heading-aside.standalone { margin-bottom: 4px; }
 .service-grid-large { grid-template-columns: repeat(3, minmax(0,1fr)); }
 .project-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.mitra-preview-heading { max-width: 700px; margin-inline: auto; text-align: center; }
+.mitra-preview-heading .section-description { max-width: 560px; margin-inline: auto; }
+.mitra-preview-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.mitra-preview-card { display: flex; min-height: 170px; align-items: center; justify-content: center; flex-direction: column; gap: 18px; padding: 28px 20px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: #fff; box-shadow: 0 8px 26px rgba(20,38,65,.04); text-align: center; }
+.mitra-preview-card img { width: min(100%, 180px); height: 75px; object-fit: contain; }
+.mitra-preview-card h3 { margin: 0; color: var(--color-ink); font-size: 1rem; letter-spacing: 0; }
+.mitra-preview-placeholder { display: grid; width: 58px; height: 58px; place-items: center; border-radius: 50%; color: #fff; background: var(--color-blue-dark); font-size: 1.4rem; font-weight: 800; }
 .cta-panel { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: clamp(35px, 6vw, 72px); border-radius: var(--radius-lg); color: #fff; background: linear-gradient(130deg, #071a33 0%, #0a3b7d 100%); }
 .cta-panel > div { max-width: 720px; }
 .cta-panel h2 { margin-bottom: 14px; font-size: clamp(2rem, 4vw, 3.25rem); }

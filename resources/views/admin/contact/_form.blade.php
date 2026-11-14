@@ -18,7 +18,8 @@
     </div>
     <div class="admin-editor-field @error('no_hp') has-error @enderror">
         <label for="no_hp">Nomor WhatsApp</label>
-        <input id="no_hp" name="no_hp" type="text" value="{{ old('no_hp', $contact->no_hp ?? '') }}" required>
+        <input id="no_hp" name="no_hp" type="text" value="{{ old('no_hp', $contact->no_hp ?? '') }}" placeholder="+62 812 3456 7890" pattern="\+62\s\d{3,4}\s\d{3,4}\s\d{3,4}" required>
+        <small>Format: +62 xxx xxxx xxxx</small>
         @error('no_hp') <p class="admin-field-error">{{ $message }}</p> @enderror
     </div>
     <div class="admin-editor-field @error('alamat') has-error @enderror">

@@ -10,12 +10,14 @@
     .footer-main { grid-template-columns: 1.3fr .8fr .8fr 1fr; gap: 28px; }
     .about-grid { gap: 55px; }
     .service-grid, .article-grid, .project-grid, .product-grid { gap: 18px; }
+    .mitra-preview-grid { gap: 16px; }
     .service-card-body, .article-card-body, .product-card-body, .project-card-body { padding: 20px; }
     .detail-hero-grid, .product-detail-grid { gap: 45px; }
 }
 
 @media (max-width: 860px) {
     .section { padding-block: 76px; }
+    .mitra-preview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .site-header {
             background: #ffffff;
             border-bottom: 1px solid #eeeeee;
@@ -145,6 +147,7 @@
     .stat-item strong { font-size: 1.45rem; }
     .stat-item span { font-size: .67rem; }
     .service-grid, .article-grid, .project-grid, .product-grid, .value-grid { grid-template-columns: 1fr; }
+    .mitra-preview-grid { grid-template-columns: 1fr; }
     .service-card-body, .article-card-body, .product-card-body, .project-card-body { padding: 22px; }
     .card-image { aspect-ratio: 1.55 / 1; }
     .cta-panel { padding: 29px 23px; }

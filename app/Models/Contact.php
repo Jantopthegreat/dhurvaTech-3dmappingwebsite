@@ -22,15 +22,13 @@ class Contact extends Model
     {
         return [
             'name' => 'string',
-            'email' => 'string',
             'no_hp' => 'string',
             'alamat' => 'string',
         ];
     }
     protected static function booted(): void
     {
-        static::saved(fn () => Cache::forget('footer_contact'));
-        static::deleted(fn () => Cache::forget('footer_contact'));
+        static::saved(fn () => Cache::forget('site_contact'));
+        static::deleted(fn () => Cache::forget('site_contact'));
     }
 }
-

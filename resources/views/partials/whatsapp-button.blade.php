@@ -1,6 +1,6 @@
 @php
-    $whatsappNumber = preg_replace('/\D+/', '', config('jst.contact.whatsapp', ''));
-    $whatsappMessage = config('jst.contact.whatsapp_message', 'Hello JST.');
+    $whatsappNumber = preg_replace('/\D+/', '', $contact['whatsapp'] ?? '');
+    $whatsappMessage = $contact['whatsapp_message'] ?? config('jst.contact.whatsapp_message', 'Hello JST.');
 @endphp
 
 <a

@@ -10,7 +10,9 @@
             <h1>Kontak WhatsApp</h1>
             <p class="admin-intro">Nomor WhatsApp dari data terbaru digunakan oleh formulir kontak publik.</p>
         </div>
-        <a class="admin-button admin-button-link" href="{{ route('admin.contact.create') }}">+ Tambah kontak</a>
+        @if ($contacts->total() === 0)
+            <a class="admin-button admin-button-link" href="{{ route('admin.contact.create') }}">+ Tambah kontak</a>
+        @endif
     </header>
 
     @if (session('status'))
@@ -43,7 +45,7 @@
                         </td>
                     </tr>
                 @empty
-                    <tr><td colspan="6" class="admin-empty"><strong>Belum ada data kontak</strong>Tambahkan kontak agar nomor WhatsApp admin digunakan oleh website.</td></tr>
+                    <tr><td colspan="5" class="admin-empty"><strong>Belum ada data kontak</strong>Tambahkan kontak agar nomor WhatsApp admin digunakan oleh website.</td></tr>
                 @endforelse
             </tbody>
         </table>

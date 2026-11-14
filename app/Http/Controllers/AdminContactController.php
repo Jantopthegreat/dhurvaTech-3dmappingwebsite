@@ -16,13 +16,27 @@ class AdminContactController extends Controller
         return view('admin.contact.index', compact('contacts'));
     }
 
-    public function create(): View
+    public function create(): View|RedirectResponse
     {
+        $contact = Contact::query()->latest('id')->first();
+
+        if ($contact !== null) {
+            return redirect()->route('admin.contact.edit', $contact);
+        }
+
         return view('admin.contact.create');
     }
 
     public function store(ContactRequest $request): RedirectResponse
     {
+        $existingContact = Contact::query()->latest('id')->first();
+
+        if ($existingContact !== null) {
+            return redirect()
+                ->route('admin.contact.edit', $existingContact)
+                ->with('status', 'Data kontak sudah tersedia. Silakan edit data yang ada.');
+        }
+
         $contact = Contact::create($request->validated());
 
         return redirect()
